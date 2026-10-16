@@ -38,7 +38,7 @@
                                     </span>
                                 </span>
                                 <span>
-                                    <a href="/tasks/{{ $task->id }}" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433]">
+                                    <a href="{{ route('tasks.show', ['id' => $task->id]) }}" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433]">
                                         <span>{{ $task->title }}</span>
                                     </a>
                                     <br />
