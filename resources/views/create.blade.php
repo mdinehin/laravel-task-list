@@ -4,6 +4,7 @@
 
 @section('content')
     <form method="POST" action="{{ route('tasks.store') }}">
+        @csrf
         <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
             <label for="title">Title:</label>
             <br />
