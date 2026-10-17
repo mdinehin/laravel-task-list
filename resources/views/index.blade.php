@@ -3,6 +3,15 @@
 @section('title', 'Task List')
 
 @section('content')
+    {{-- Create task link --}}
+    <ul class="mt-2 mb-2 flex gap-3 text-sm leading-normal">
+        <li>
+            <a href="{{ route('tasks.create') }}" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
+                <span>Create task</span>
+            </a>
+        </li>
+    </ul>
+
     @if (count($tasks) > 0)
         <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">With so many options available to you,<br /> we suggest you start with the following:</p>
     @endif
@@ -29,14 +38,5 @@
                 <span>No tasks to display.</span>
             </li>
         @endforelse
-    </ul>
-
-    {{-- Create task link --}}
-    <ul class="flex gap-3 text-sm leading-normal">
-        <li>
-            <a href="#" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
-                Create task
-            </a>
-        </li>
     </ul>
 @endsection
