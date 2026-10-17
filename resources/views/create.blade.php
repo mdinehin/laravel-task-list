@@ -16,7 +16,8 @@
         <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
             <label for="title">Title:</label>
             <br />
-            <input class="w-full border dark:border-[#3E3E3A]" text="text" name="title" id="title" />
+            <input class="w-full border dark:border-[#3E3E3A]" text="text" name="title" id="title"
+                value="{{ old('title') }}" />
             @error('title')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
@@ -25,7 +26,8 @@
         <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
             <label for="description">Description:</label>
             <br />
-            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="description" id="description" rows="5"></textarea>
+            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="description" id="description" rows="5"
+                >{{ old('description') }}</textarea>
             @error('description')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
@@ -34,7 +36,8 @@
         <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
             <label for="long_description">Long description:</label>
             <br />
-            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="long_description" id="long_description" rows="10"></textarea>
+            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="long_description" id="long_description" rows="10"
+                >{{ old('long_description') }}</textarea>
             @error('long_description')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
