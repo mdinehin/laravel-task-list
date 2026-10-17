@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,12 +29,8 @@ Route::get('/tasks/{task}', function (Task $task) {
     ]);
 })->name('tasks.show');
 
-Route::post('/tasks', function (Request $request) {
-    $data = $request->validate([
-        'title'=> 'required|max:255',
-        'description'=> 'required',
-        'long_description'=> 'required',
-    ]);
+Route::post('/tasks', function (TaskRequest $request) {
+    $data = $request->validated();
 
     $task = new Task();
     $task->title = $data['title'];
@@ -47,12 +43,8 @@ Route::post('/tasks', function (Request $request) {
     ])->with('success', 'Task created successfully');
 })->name('tasks.store');
 
-Route::put('/tasks/{task}', function (Request $request, Task $task) {
-    $data = $request->validate([
-        'title'=> 'required|max:255',
-        'description'=> 'required',
-        'long_description'=> 'required',
-    ]);
+Route::put('/tasks/{task}', function (TaskRequest $request, Task $task) {
+    $data = $request->validated();
 
     $task->title = $data['title'];
     $task->description = $data['description'];
