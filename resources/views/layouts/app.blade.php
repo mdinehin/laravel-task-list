@@ -17,6 +17,14 @@
         </style>
     @endif
 
+    @if (session()->has('success'))
+        <style>
+            .success-message {
+                color: green;
+            }
+        </style>
+    @endif
+
     @yield('styles')
 </head>
 <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
@@ -26,6 +34,12 @@
             {{-- Left panel --}}
             <div class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
                 <h1 class="mb-4 font-medium">@yield('title')</h1>
+
+                @if (session()->has('success'))
+                    <p class="mb-2 success-message">
+                        <span>{{ session('success') }} &#10004;</span>
+                    </p>
+                @endif
 
                 @yield('content')
             </div>
