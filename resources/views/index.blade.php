@@ -34,7 +34,9 @@
                 </span>
                 <span>
                     <a href="{{ route('tasks.show', ['task' => $task]) }}" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433]">
-                        <span>{{ $task->title }}</span>
+                        <span
+                            @class(['line-through' => $task->completed])"
+                        >{{ $task->title }}</span>
                     </a>
                     <br />
                     Created: {{ $task->created_at }}<br />
