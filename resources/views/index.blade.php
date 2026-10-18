@@ -39,7 +39,7 @@
                         >{{ $task->title }}</span>
                     </a>
                     <br />
-                    Created: {{ $task->created_at }}<br />
+                    Created: {{ $task->created_at->diffForHumans() }}<br />
                     Completed: {{ $task->completed ? 'Yes' : 'No' }}
                 </span>
             </li>

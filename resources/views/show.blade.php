@@ -10,10 +10,10 @@
         Description: {{ $task->description }}<br />
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Created: {{ $task->created_at }}<br />
+        Created: {{ $task->created_at->diffForHumans() }}<br />
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Updated: {{ $task->updated_at }}<br />
+        Updated: {{ $task->updated_at->diffForHumans() }}<br />
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
         Completed: {{ $task->completed ? 'Yes' : 'No' }}
