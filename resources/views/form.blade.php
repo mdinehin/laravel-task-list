@@ -37,7 +37,7 @@
         </div>
 
         <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-            <label for="long_description">Long description:</label>
+            <label for="long_description">Long description (optional):</label>
             <br />
             <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="long_description" id="long_description" rows="10"
                 >{{ $task->long_description ?? old('long_description') }}</textarea>
