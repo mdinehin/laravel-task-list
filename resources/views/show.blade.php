@@ -4,16 +4,16 @@
 
 @section('content')
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Title: {{ $task->title }}<br />
+        Title: {{ $task->title }}
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Description: {{ $task->description }}<br />
+        Description: {{ $task->description }}
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Created: {{ $task->created_at->diffForHumans() }}<br />
+        Created: {{ $task->created_at->diffForHumans() }}
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
-        Updated: {{ $task->updated_at->diffForHumans() }}<br />
+        Updated: {{ $task->updated_at->diffForHumans() }}
     </p>
     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
         Completed: {{ $task->completed ? 'Yes' : 'No' }}
