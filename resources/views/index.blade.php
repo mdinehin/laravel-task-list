@@ -33,7 +33,7 @@
                     </span>
                 </span>
                 <span>
-                    <a href="{{ route('tasks.show', ['task' => $task->id]) }}" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433]">
+                    <a href="{{ route('tasks.show', ['task' => $task]) }}" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433]">
                         <span>{{ $task->title }}</span>
                     </a>
                     <br />
