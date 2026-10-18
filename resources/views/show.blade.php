@@ -30,9 +30,7 @@
                         <span class="rounded-full bg-[#dbdbd7] dark:bg-[#3E3E3A] w-1.5 h-1.5"></span>
                     </span>
                 </span>
-                <span>
-                    {{ $task->long_description }}
-                </span>
+                <span>{{ $task->long_description }}</span>
             </li>
         </ul>
     @endif
