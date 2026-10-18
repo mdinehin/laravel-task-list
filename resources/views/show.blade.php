@@ -10,7 +10,7 @@
         Updated: {{ $task->updated_at }}
     </p>
 
-    @if ($task->long_description)
+    @if($task->long_description)
         <ul class="flex flex-col mb-4 lg:mb-6">
             <li class="flex items-center gap-4 py-2 relative before:top-1/2 before:bottom-0 before:left-[0.4rem] before:absolute">
                 <span class="relative py-1 bg-white dark:bg-[#161615]">
@@ -25,7 +25,7 @@
         </ul>
     @endif
 
-    {{-- Edit / Delete task link --}}
+    {{-- Edit link, Delete button --}}
     <ul class="flex gap-3 text-sm leading-normal">
         <li>
             <a href="{{ route('tasks.edit', ['task' => $task->id]) }}" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">

@@ -9,7 +9,7 @@
     @fonts
 
     <!-- Styles / Scripts -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    @if(file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
         <style>
@@ -17,7 +17,7 @@
         </style>
     @endif
 
-    @if (session()->has('success'))
+    @if(session()->has('success'))
         <style>
             .success-message {
                 color: green;
@@ -35,7 +35,7 @@
             <div class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
                 <h1 class="mb-4 font-medium">@yield('title')</h1>
 
-                @if (session()->has('success'))
+                @if(session()->has('success'))
                     <p class="mb-2 success-message">
                         <span>{{ session('success') }} &#10004;</span>
                     </p>
