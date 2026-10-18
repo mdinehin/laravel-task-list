@@ -37,7 +37,8 @@
                         <span>{{ $task->title }}</span>
                     </a>
                     <br />
-                    Created: {{ $task->created_at }}
+                    Created: {{ $task->created_at }}<br />
+                    Completed: {{ $task->completed ? 'Yes' : 'No' }}
                 </span>
             </li>
         @empty
