@@ -12,8 +12,15 @@
         </li>
     </ul>
 
-    @if (count($tasks) > 0)
+    @if($tasks->isNotEmpty())
         <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">With so many options available to you,<br /> we suggest you start with the following:</p>
+    @endif
+
+    {{-- Pagination links --}}
+    @if($tasks->isNotEmpty())
+        <div class="mt-6 mb-6">
+            {{ $tasks->links() }}
+        </div>
     @endif
 
     {{-- Task list --}}
@@ -39,4 +46,11 @@
             </li>
         @endforelse
     </ul>
+
+    {{-- Pagination links --}}
+    @if($tasks->isNotEmpty())
+        <div class="mt-6">
+            {{ $tasks->links() }}
+        </div>
+    @endif
 @endsection
