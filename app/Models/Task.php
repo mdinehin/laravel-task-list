@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Database\Factories\TaskFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    /** @use HasFactory<TaskFactory> */
     use HasFactory;
 
     protected $fillable = [
@@ -14,4 +16,15 @@ class Task extends Model
         'description',
         'long_description'
     ];
+
+    /**
+     * Toggle and save the attribute.
+     *
+     * @return void
+     */
+    public function toggleComplete(): void
+    {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 }
