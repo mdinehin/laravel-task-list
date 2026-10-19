@@ -16,30 +16,30 @@
         @isset($task)
             @method('PUT')
         @endisset
-        <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
+        <div class="text-paragraph">
             <label for="title">Title:</label>
             <br />
-            <input class="w-full border dark:border-[#3E3E3A]" text="text" name="title" id="title"
+            <input class="form-field" text="text" name="title" id="title"
                 value="{{ $task->title ?? old('title') }}" />
             @error('title')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
+        <div class="text-paragraph">
             <label for="description">Description:</label>
             <br />
-            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="description" id="description" rows="5"
+            <textarea class="form-field" text="text" name="description" id="description" rows="5"
                 >{{ $task->description ?? old('description') }}</textarea>
             @error('description')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
+        <div class="text-paragraph">
             <label for="long_description">Long description (optional):</label>
             <br />
-            <textarea class="w-full border dark:border-[#3E3E3A]" text="text" name="long_description" id="long_description" rows="10"
+            <textarea class="form-field" text="text" name="long_description" id="long_description" rows="10"
                 >{{ $task->long_description ?? old('long_description') }}</textarea>
             @error('long_description')
                 <p class="mt-1 error-message">{{ $message }}</p>
@@ -47,14 +47,14 @@
         </div>
 
         {{-- Go backwards link, Save/Delete button --}}
-        <ul class="mt-4 flex gap-3 text-sm leading-normal">
+        <ul class="mt-4 button-list-wrapper">
             <li>
                 @isset($task)
-                    <a href="{{ route('tasks.show', ['task' => $task]) }}" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
+                    <a href="{{ route('tasks.show', ['task' => $task]) }}" class="button-appearance">
                         <span>Back</span>
                     </a>
                 @endisset
-                <button type="submit" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
+                <button type="submit" class="button-appearance">
                     @isset($task)
                         <span>Save</span>
                     @else
@@ -66,9 +66,9 @@
     </form>
 
     {{-- Panel footer --}}
-    <p class="mt-6 lg:mt-10 text-[#706f6c] dark:text-[#A1A09A]">
+    <p class="footer-paragraph">
         Back to
-        <a href="{{ route('tasks.index') }}" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
+        <a href="{{ route('tasks.index') }}" class="link-appearance">
             <span>task list</span>
         </a>
     </p>
