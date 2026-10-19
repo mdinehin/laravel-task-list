@@ -2,14 +2,6 @@
 
 @section('title', isset($task) ? 'Edit Task' : 'Create Task')
 
-@section('styles')
-    <style>
-        .error-message {
-            color: red;
-        }
-    </style>
-@endsection
-
 @section('content')
     <form method="POST" action="{{ isset($task) ? route('tasks.update', ['task' => $task->id]) : route('tasks.store') }}">
         @csrf
@@ -19,31 +11,34 @@
         <div class="text-paragraph">
             <label for="title">Title:</label>
             <br />
-            <input class="form-field" text="text" name="title" id="title"
-                value="{{ $task->title ?? old('title') }}" />
+            <input text="text" name="title" id="title"
+                value="{{ $task->title ?? old('title') }}"
+                @class([
+                    'form-field',
+                    'border-red-500' => $errors->has('title')
+                ])
+            />
             @error('title')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div class="text-paragraph">
+        <div class="mt-2 text-paragraph">
             <label for="description">Description:</label>
             <br />
-            <textarea class="form-field" text="text" name="description" id="description" rows="5"
-                >{{ $task->description ?? old('description') }}</textarea>
+            <textarea text="text" name="description" id="description" rows="5"
+                class="form-field @error('description') border-red-500 @enderror"
+            >{{ $task->description ?? old('description') }}</textarea>
             @error('description')
-                <p class="mt-1 error-message">{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
-        <div class="text-paragraph">
+        <div class="mt-2 text-paragraph">
             <label for="long_description">Long description (optional):</label>
             <br />
             <textarea class="form-field" text="text" name="long_description" id="long_description" rows="10"
                 >{{ $task->long_description ?? old('long_description') }}</textarea>
-            @error('long_description')
-                <p class="mt-1 error-message">{{ $message }}</p>
-            @enderror
         </div>
 
         {{-- Go backwards link, Create/Save button --}}

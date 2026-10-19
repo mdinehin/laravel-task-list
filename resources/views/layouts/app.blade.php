@@ -46,6 +46,9 @@
         .footer-paragraph {
             @apply mt-6 lg:mt-10 text-[#706f6c] dark:text-[#A1A09A]
         }
+        .error-message {
+            @apply text-red-500 text-xs
+        }
     </style>
     {{-- blade-formatter-enable --}}
 
