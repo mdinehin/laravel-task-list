@@ -10,6 +10,7 @@
 
     <!-- Styles / Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
@@ -67,12 +68,27 @@
         <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
 
             {{-- Left panel --}}
-            <div class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
+            <div
+                x-data="{ flash: true}"
+                class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none"
+            >
                 <h1 class="mb-4 font-medium">@yield('title')</h1>
 
                 @if(session()->has('success'))
-                    <div class="mb-4 success-message">
+                    <div
+                        x-show="flash"
+                        class="relative my-8 rounded border border-green-400 bg-green-100 px-4 py-3 text-green-700"
+                        role="alert"
+                    >
                         <span>{{ session('success') }} &#10004;</span>
+                        <span class="absolute top-0 bottom-0 right-0 px-1 py-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" @click="flash = false"
+                                stroke="currentColor" class="h-6 w-6 cursor-pointer"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
                     </div>
                 @endif
 
