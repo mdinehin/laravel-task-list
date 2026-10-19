@@ -68,9 +68,9 @@
                 <h1 class="mb-4 font-medium">@yield('title')</h1>
 
                 @if(session()->has('success'))
-                    <p class="mb-2 success-message">
+                    <div class="mb-4 success-message">
                         <span>{{ session('success') }} &#10004;</span>
-                    </p>
+                    </div>
                 @endif
 
                 @yield('content')

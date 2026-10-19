@@ -3,17 +3,12 @@
 @section('title', 'Task List')
 
 @section('content')
-    {{-- Create task link --}}
-    <ul class="mt-2 mb-2 flex gap-3 text-sm leading-normal">
-        <li>
-            <a href="{{ route('tasks.create') }}" class="button-appearance">
-                <span>Create task</span>
-            </a>
-        </li>
-    </ul>
+    <a href="{{ route('tasks.create') }}" class="mb-4 button-appearance">
+        <span>Create task</span>
+    </a>
 
     @if($tasks->isNotEmpty())
-        <p class="text-paragraph">With so many options available to you,<br /> we suggest you start with the following:</p>
+        <p class="text-paragraph">With so many options available to you,<br />we suggest you start with the following:</p>
     @endif
 
     {{-- Pagination links --}}

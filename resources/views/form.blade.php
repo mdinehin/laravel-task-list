@@ -46,19 +46,21 @@
             @enderror
         </div>
 
-        {{-- Go backwards link, Save/Delete button --}}
+        {{-- Go backwards link, Create/Save button --}}
         <ul class="mt-4 button-list-wrapper">
-            <li>
-                @isset($task)
+            @isset($task)
+                <li>
                     <a href="{{ route('tasks.show', ['task' => $task]) }}" class="button-appearance">
                         <span>Back</span>
                     </a>
-                @endisset
+                </li>
+            @endisset
+            <li>
                 <button type="submit" class="button-appearance">
-                    @isset($task)
-                        <span>Save</span>
-                    @else
+                    @if(!isset($task))
                         <span>Create</span>
+                    @else
+                        <span>Save</span>
                     @endisset
                 </button>
             </li>

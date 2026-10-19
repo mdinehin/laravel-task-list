@@ -3,37 +3,45 @@
 @section('title', 'Task View')
 
 @section('content')
-    <p class="text-paragraph">
-        Title: {{ $task->title }}
-    </p>
-    <p class="text-paragraph">
-        Description: {{ $task->description }}
-    </p>
-    <p class="text-paragraph">
-        Created: {{ $task->created_at->diffForHumans() }}
-    </p>
-    <p class="text-paragraph">
-        Updated: {{ $task->updated_at->diffForHumans() }}
-    </p>
-    <p class="text-paragraph">
-        Completed: {{ $task->completed ? 'Yes' : 'No' }}
-    </p>
-
-    @if($task->long_description)
-        <p class="text-paragraph">
-            Long description:
-        </p>
-        <ul class="list-wrapper">
-            <li class="list-item">
-                <span class="bullet-wrapper">
-                    <span class="bullet-body">
-                        <span class="bullet-inner"></span>
-                    </span>
-                </span>
-                <span>{{ $task->long_description }}</span>
-            </li>
-        </ul>
-    @endif
+    <dl class="space-y-2">
+        <div>
+            <dt class="font-semibold inline">Title:</dt>
+            <dd class="inline">{{ $task->title }}</dd>
+        </div>
+        <div>
+            <dt class="font-semibold inline">Description:</dt>
+            <dd class="inline">{{ $task->description }}</dd>
+        </div>
+        <div>
+            <dt class="font-semibold inline">Created:</dt>
+            <dd class="inline">{{ $task->created_at->diffForHumans() }}</dd>
+        </div>
+        <div>
+            <dt class="font-semibold inline">Updated:</dt>
+            <dd class="inline">{{ $task->updated_at->diffForHumans() }}</dd>
+        </div>
+        <div>
+            <dt class="font-semibold inline">Completed:</dt>
+            <dd class="inline">{{ $task->completed ? 'Yes' : 'No' }}</dd>
+        </div>
+        @if($task->long_description)
+            <div>
+                <dt class="font-semibold">Long description:</dt>
+                <dd>
+                    <ul class="list-wrapper">
+                        <li class="list-item">
+                            <span class="bullet-wrapper">
+                                <span class="bullet-body">
+                                    <span class="bullet-inner"></span>
+                                </span>
+                            </span>
+                            <span>{{ $task->long_description }}</span>
+                        </li>
+                    </ul>
+                </dd>
+            </div>
+        @endif
+    </dl>
 
     {{-- Toggle button --}}
     <div class="mt-6 mb-4">
@@ -52,6 +60,8 @@
             <a href="{{ route('tasks.edit', ['task' => $task]) }}" class="button-appearance">
                 <span>Edit</span>
             </a>
+        </li>
+        <li>
             <form method="POST" action="{{ route('tasks.destroy', ['task' => $task]) }}" class="inline-block">
                 @csrf
                 @method('DELETE')
