@@ -14,17 +14,15 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'long_description'
+        'long_description',
     ];
 
     /**
      * Toggle and save the attribute.
-     *
-     * @return void
      */
     public function toggleComplete(): void
     {
-        $this->completed = !$this->completed;
+        $this->completed = ! $this->completed;
         $this->save();
     }
 }
