@@ -43,13 +43,6 @@
 
         {{-- Go backwards link, Create/Save button --}}
         <ul class="mt-4 button-list-wrapper">
-            @isset($task)
-                <li>
-                    <a href="{{ route('tasks.show', ['task' => $task]) }}" class="button-appearance">
-                        <span>Back</span>
-                    </a>
-                </li>
-            @endisset
             <li>
                 <button type="submit" class="button-appearance">
                     @if(!isset($task))
@@ -59,6 +52,13 @@
                     @endisset
                 </button>
             </li>
+            @isset($task)
+                <li>
+                    <a href="{{ route('tasks.show', ['task' => $task]) }}" class="button-appearance">
+                        <span>Back</span>
+                    </a>
+                </li>
+            @endisset
         </ul>
     </form>
 
