@@ -11,6 +11,10 @@
 
 A clean task management application built with Laravel 13, Tailwind CSS, and Alpine.js.
 
+## Preview
+
+![Application demo walkthrough](https://github.com/user-attachments/assets/0a696487-3d80-4b6f-b876-89b8dc52e013)
+
 ## Features
 
 - Task Management: Create, update, complete, and delete daily tasks.
