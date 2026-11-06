@@ -13,7 +13,7 @@ A clean task management application built with Laravel 13, Tailwind CSS, and Alp
 
 ## Preview
 
-![Application demo walkthrough](https://github.com/user-attachments/assets/0a696487-3d80-4b6f-b876-89b8dc52e013)
+![Application demo walkthrough](https://github.com/user-attachments/assets/1f224d8c-d47a-494b-b7c5-5581e61f2fcc)
 
 ## Features
 
