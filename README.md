@@ -1,4 +1,4 @@
-# Laravel Task List App
+# Laravel Task List
 
 ![Laravel Version](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=flat-square&logo=laravel&logoColor=white)
 ![PHP Version](https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=flat-square&logo=php&logoColor=white)
@@ -6,8 +6,8 @@
 ![MySQL Version](https://img.shields.io/badge/MySQL-9.x-4479A1?style=flat-square&logo=mysql&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-<a href="https://github.com/mdinehin/laravel-task-list-app/actions/workflows/tests.yml"><img src="https://github.com/mdinehin/laravel-task-list-app/workflows/Tests/badge.svg" alt="Tests"></a>
-<a href="https://github.com/mdinehin/laravel-task-list-app/actions/workflows/coding-standards.yml"><img src="https://github.com/mdinehin/laravel-task-list-app/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards"></a>
+<a href="https://github.com/mdinehin/laravel-task-list/actions/workflows/tests.yml"><img src="https://github.com/mdinehin/laravel-task-list/workflows/Tests/badge.svg" alt="Tests"></a>
+<a href="https://github.com/mdinehin/laravel-task-list/actions/workflows/coding-standards.yml"><img src="https://github.com/mdinehin/laravel-task-list/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards"></a>
 
 A clean task management application built with Laravel 13, Tailwind CSS, and Alpine.js.
 
@@ -31,7 +31,7 @@ The following software dependencies are required:
 
 ## Installation
 
-1. Clone the repository `git clone https://github.com/mdinehin/laravel-task-list-app.git`
+1. Clone the repository `git clone https://github.com/mdinehin/laravel-task-list.git`
 2. Install PHP dependencies with `composer install`
 3. Copy the `.env.example` file to `.env` and fill in the database credentials
 4. Generate the application key with `php artisan key:generate`
