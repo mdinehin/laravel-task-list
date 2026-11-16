@@ -8,16 +8,19 @@
         @isset($task)
             @method('PUT')
         @endisset
+
         <div class="text-paragraph">
             <label for="title">Title:</label>
             <br />
-            <input text="text" name="title" id="title"
+
+            <input type="text" name="title" id="title"
                 value="{{ $task->title ?? old('title') }}"
                 @class([
                     'form-field',
                     'border-red-500' => $errors->has('title')
                 ])
             />
+
             @error('title')
                 <p class="mt-1 error-message">{{ $message }}</p>
             @enderror
@@ -26,9 +29,11 @@
         <div class="mt-2 text-paragraph">
             <label for="description">Description:</label>
             <br />
-            <textarea text="text" name="description" id="description" rows="5"
+
+            <textarea name="description" id="description" rows="5"
                 class="form-field @error('description') border-red-500 @enderror"
             >{{ $task->description ?? old('description') }}</textarea>
+
             @error('description')
                 <p class="error-message">{{ $message }}</p>
             @enderror
@@ -37,7 +42,8 @@
         <div class="mt-2 text-paragraph">
             <label for="long_description">Long description (optional):</label>
             <br />
-            <textarea class="form-field" text="text" name="long_description" id="long_description" rows="10"
+
+            <textarea class="form-field" name="long_description" id="long_description" rows="10"
                 >{{ $task->long_description ?? old('long_description') }}</textarea>
         </div>
 
@@ -52,6 +58,7 @@
                     @endisset
                 </button>
             </li>
+
             @isset($task)
                 <li>
                     <a href="{{ route('tasks.show', ['task' => $task]) }}" class="button-appearance">
