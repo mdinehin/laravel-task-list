@@ -9,7 +9,7 @@
 <a href="https://github.com/mdinehin/laravel-task-list/actions/workflows/tests.yml"><img src="https://github.com/mdinehin/laravel-task-list/workflows/Tests/badge.svg" alt="Tests"></a>
 <a href="https://github.com/mdinehin/laravel-task-list/actions/workflows/coding-standards.yml"><img src="https://github.com/mdinehin/laravel-task-list/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards"></a>
 
-A clean task management application built with Laravel 13, Tailwind CSS, and Alpine.js.
+A clean task management application built with Laravel, Tailwind CSS, and Alpine.js.
 
 ## Preview
 
